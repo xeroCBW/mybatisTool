@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 引入配置文件 -->
+    
+    <!--classPathEntry:数据库的JDBC驱动,换成你自己的驱动位置 可选 -->
+    <classPathEntry location="C:\Users\cbw\Desktop\mybatis-generator\mybatis-generator\mysql-connector-java-5.1.30.jar" />
+
+    <!-- 一个数据库一个context -->
+    <!--defaultModelType="flat" 大数据字段，不分表 -->
+    <context id="MysqlTables" targetRuntime="MyBatis3" defaultModelType="flat">
+        <property name="autoDelimitKeywords" value="true" />
+        <property name="beginningDelimiter" value="`" />
+        <property name="endingDelimiter" value="`" />
+        <property name="javaFileEncoding" value="utf-8" />
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+
+        <!-- 注释 -->
+        <commentGenerator >
+            <property name="suppressAllComments" value="true"/><!-- 是否取消注释 -->
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <!-- jdbc连接 -->
+				<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://120.77.223.13:3306/manager" userId="root" password="xxx" />
+        
+        <!-- 类型转换 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
+        <!-- javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver-->
+
+        <!-- 生成实体类地址 -->
+        <javaModelGenerator targetPackage="com.cbw.dto" targetProject="C:\Users\cbw\Desktop\mybatis-generator\mybatis-generator\newfile" >
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成mapxml文件 -->
+        <sqlMapGenerator targetPackage="mappers" targetProject="C:\Users\cbw\Desktop\mybatis-generator\mybatis-generator\newfile" >
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+        <!-- 生成mapxml对应client，也就是接口dao -->
+        <javaClientGenerator targetPackage="com.cbw.mappers" targetProject="C:\Users\cbw\Desktop\mybatis-generator\mybatis-generator\newfile" type="XMLMAPPER" >
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+        
+
+		<!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
+		<!-- <table tableName="IFDP_SYS_USER_BASE" domainObjectName="SysUser" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="IFDP_SYS_ROLE" domainObjectName="SysRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="IFDP_SYS_REL_USER_ROLE" domainObjectName="SysUserRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="IFDP_SYS_REL_ROLE_BSN" domainObjectName="SysRoleBsn" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="IFDP_SYS_ORGAN_BASE" domainObjectName="SysOrgan" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="IFDP_SYS_MENU_FUNC" domainObjectName="SysMenuFunc" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="IFDP_SYS_MENU" domainObjectName="SysMenu" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="IFDP_SYS_BSN" domainObjectName="SysBsn" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> -->
+		
+		<!--
+		
+		<table tableName="deposit_STATISTICS" domainObjectName="DepositStatistics" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+		<table tableName="loan_STATISTICS" domainObjectName="LoanStatistics" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+		<table tableName="work_flow_detail" domainObjectName="WorkFlowDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+		
+         -->
+		 <!--
+		
+ 		<table tableName="USER" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+		 -->
+		  <!--
+		<table tableName="USER" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+		<table tableName="ROLE" domainObjectName="Role" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+		<table tableName="USER_ROLE" domainObjectName="UserRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+		-->
+		
+		 <!--
+		<table tableName="stu" domainObjectName="Stu" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+	      -->
+		  
+		  		
+		<table tableName="tb_content" domainObjectName="TbContent" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+	     <table tableName="tb_content_category" domainObjectName="TbContentCategory" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+	     <table tableName="tb_item" domainObjectName="TbItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+	     <table tableName="tb_item_cat" domainObjectName="TbItem_cat" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+	     <table tableName="tb_item_desc" domainObjectName="TbItem_desc" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+	     <table tableName="tb_item_param" domainObjectName="TbItem_param" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+	     <table tableName="tb_item_param_item" domainObjectName="TbItemParamItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+	     <table tableName="tb_user" domainObjectName="TbUser" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> 
+
+		
+		
+    </context>
+</generatorConfiguration>
+
